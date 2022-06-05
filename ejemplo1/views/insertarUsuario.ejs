@@ -1,0 +1,29 @@
+<%- include('templates/encabezado')%>
+<%- include('templates/menu')%>
+
+<div class="row mt-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <form action="/insertarUsuario" method="POST">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Nuevo usuario</h1>
+                </div>
+                <div class="card-body">
+                    
+                    <input class="form-control mb-3" type="text" name="nombre" id="nombre" placeholder="Nombre">
+                    <input class="form-control mb-3" type="text" name="usuario" id="usuario" placeholder="Usuario">
+                    <input class="form-control mb-3" type="text" name="password" id="password" placeholder="Password">
+                    <input class="form-control mb-3" type="text" name="foto" id="foto" placeholder="foto">            
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-secondary mt-3 mb-3 col-12" href="/mostrarUsuarios">Cancelar</a>
+                    <button class="form-control btn btn-primary" type="submit">Guardar usuario</button>
+                </div>
+            </div>     
+        </form>
+    </div>
+    <div class="col-2"></div>
+</div>
+   
+<%- include('templates/pie')%>

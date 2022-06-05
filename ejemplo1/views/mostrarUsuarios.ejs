@@ -1,0 +1,46 @@
+<%- include('templates/encabezado')%>
+<%- include('templates/menu')%>
+
+<div class="row mt-5">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <a class="btn btn-primary mb-3" href="/insertarUsuario">Nuevo registro</a>
+        <h1>Lista de usuarios</h1>
+        <table class="table">
+            <thead>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Usuario</th>
+                <th>Password</th>
+                <th>Foto</th>
+                <th>Modificar/Eliminar</th>
+            </thead>
+            <tbody>
+                <%
+                    var i=1;
+                    usuarios.forEach((usuario)=>{
+                %>
+                        <tr>
+                            <td class="align-middle"><%= i%></td>
+                            <td class="align-middle"><%= usuario.nombre%></td>
+                            <td class="align-middle"><%= usuario.usuario%></td>
+                            <td class="align-middle"><%= usuario.password%></td>
+                            <td class="align-middle"><img height="80" src="<%= usuario.foto%>" alt=""></td>
+                            <td class="align-middle">
+                                <h3>
+                                    <a href="/modificarUsuario/<%= usuario._id%>">📝</a> /
+                                    <a href="/eliminarUsuario/<%= usuario._id%>">🗑</a>
+                                </h3>
+                            </td>
+                        </tr>                
+                <%
+                    i++;
+                    });
+                %>
+            </tbody>
+        </table>
+    </div>
+    <div class="col1"></div>
+</div>
+
+<%- include('templates/pie')%>
